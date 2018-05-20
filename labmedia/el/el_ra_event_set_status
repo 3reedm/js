@@ -1,0 +1,4 @@
+docEvent = OpenDoc(UrlFromDocID(eventId));
+teEvent = docEvent.TopElem;
+teEvent.set_status(sNewStatusParam,true);
+docEvent.Save();

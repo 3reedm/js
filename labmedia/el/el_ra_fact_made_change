@@ -1,0 +1,5 @@
+var eventDoc = OpenDoc(UrlFromDocID(eventId));
+var eventElem = eventDoc.TopElem;
+
+eventElem.custom_elems.ObtainChildByKey("fact_made").value.Value = fact_made;
+eventDoc.Save();

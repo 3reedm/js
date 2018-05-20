@@ -1,0 +1,15 @@
+eventDoc = OpenDoc(UrlFromDocID(eId));
+eventTE = eventDoc.TopElem;
+
+eventTE.name = UrlDecode(eName);
+alert(eTopic);
+eventTE.custom_elems.ObtainChildByKey("topic").value = UrlDecode(eTopic);
+eventTE.event_type_id = eTypeId;
+eventTE.event_form = eFormId;
+eventTE.organizational_form = eOrgFormId;
+eventTE.place_id = eCityId;
+eventTE.place = UrlDecode(ePlace);
+eventTE.start_date = UtcToLocalDate(eStartDate);
+eventTE.finish_date = UtcToLocalDate(eFinishDate);
+
+eventDoc.Save();

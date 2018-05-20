@@ -1,0 +1,112 @@
+<style>
+
+.h-filter__row:first-child .h-filter__left_spad {
+    padding-top: 12px;
+    padding-bottom: 22px;
+}
+
+@-moz-document url-prefix() {.h-filter__row:first-child .h-filter__left_spad {
+    padding-top: 22px;
+    padding-bottom: 22px;
+} 
+.def span {
+    margin: 9px 20px 0 0;
+}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+   .h-filter__row:first-child .h-filter__left_spad {
+	    padding-top: 2px;
+	    padding-bottom: 22px;
+	} 
+	.def span {
+	    margin: -47px 20px 0 0;
+	}
+	.h-filter__row:first-child .h-filter__right{
+		padding-top: 2px;
+	}
+}
+</style>
+<div class="h-breadcrumbs h-breadcrumbs_pos">
+	<div class="h-wrapper">
+		<div class="h-container">
+			<ul class="h-breadcrumbs__list">
+				<li class="h-breadcrumbs__item"><a href="/view_doc.html?mode=home">Главная</a></li>
+				<li class="h-breadcrumbs__item"><a href="javascript:;">Предыдущий раздел</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<section id="main" class="h-wrapper h-wrapper_sh">
+	<div class="h-container">
+		<h1 class="h-methods-h1">Отчет по внешнему обучению</h1>
+		<div class="h-filter h-filter_wrap"> <!-- id="sticky"-->
+			<ul class="h-filter__list">
+
+			</ul>
+			<a href="javascript:void(0);" class="h-build-report">Построить отчет</a>
+			<a href="javascript:void(0);" class="h-download-to-excel">Выгрузить в Exсel</a>
+		</div>
+	</div>
+	<form id="excel_report" action="/custom_web_template.html?object_id=<%=ArrayOptFirstElem(XQuery("for $elem in custom_web_templates where $elem/code = 'hlebprom_edu_external_learning_report_excel' return $elem"), {id: 0}).id%>" method="POST">
+			<input type="hidden" value="" name="resultTable"/>
+	</form>
+</section>
+<section id="result_table" class="h-wrapper h-wrapper_education">
+	<div class="h-container">
+		<div class="h-all-programm">
+			<span class="h-all-programm_text">Найдено отчетов:</span>
+			<span class="h-all-programm_calc">0</span>
+		</div>
+
+		<div id="empty_message"  class="h-all-programm_text" style="display: none;"></div>
+
+		<table class="h-report__table h-education__table">
+			<tr>
+				<th>Сотрудник</th>
+				<th>Уровень</th>
+				<th>Обучение</th>
+				<th>Длительность</th>
+				<th>Стоимость, руб</th>
+				<th>Форма проведения</th>
+			</tr>
+		</table>
+		<div class="pagination" style="display: none;">
+			<div class="pagination-btns" style="display: none;">
+				<a href="javascript:;" class="pagination-left" style="display: none;"><div>Предыдущая</div></a>
+				<a href="javascript:;" class="pagination-right"><div>Следующая</div></a>
+			</div>
+			<ul class="pagination-list" style="display: none;">
+				<li><a href="javascript:;" class="active">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">5</a></li>
+				<li><a href="javascript:;">6</a></li>
+				<li><a href="javascript:;">7</a></li>
+				<li><a href="javascript:;">8</a></li>
+				<li><a href="javascript:;">9</a></li>
+				<li><a href="javascript:;">10</a></li>
+				<li><a href="javascript:;">11</a></li>
+				<li><a href="javascript:;">12</a></li>
+				<li><a href="javascript:;">13</a></li>
+				<li><a href="javascript:;">14</a></li>
+				<li><a href="javascript:;">15</a></li>
+				<li><a href="javascript:;">16</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="access_denied" style="display: none;">
+	<div class="h-container">
+		<div class="h-filter__left h-filter__left_spad">У вас недостаточно прав для просмотра данной страницы</div>
+	</div>
+</section>
+<section class="h-page-bottom"></section>
+
+
+<script src="scripts/jqueryui/jquery.ui.core.js"></script>
+<script src="scripts/jqueryui/jquery.ui.datepicker.js"></script>
+<script src="scripts/jqueryui/jquery.ui.widget.js"></script>
+<script src="scripts/jqueryui/jquery.ui.mouse.js"></script>
+<script src="scripts/jqueryui/jquery.ui.sortable.js"></script>

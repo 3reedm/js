@@ -1,0 +1,213 @@
+<style>
+	/* Здесь хранятся персональные стили мероприятия */
+	#file-input-wrap {
+		display: none
+	}
+	#el_popup_response_event .el_popup_btn_line,
+	#el_popup_error .el_popup_btn_line {
+		border-top: none;
+		margin-top: 0;
+		padding-top: 0
+	}
+	#el_popup_response_event .e-report,
+	#el_popup_error .e-report {
+		padding-left: 50px;
+		padding-right: 50px
+	}
+	#el_popup_response_event .e-report__line,
+	#el_popup_error .e-report__line {
+		margin-top: 30px
+	}
+	#el_popup_response_event .e-report__line:first-child,
+	#el_popup_error .e-report__line:first-child {
+		margin-top: 50px
+	}
+	#el_popup_response_event .e-report__line.e-report__line_single,
+	#el_popup_error .e-report__line.e-report__line_single {
+		text-align: center
+	}
+	#el_popup_response_event .e-report__textarea,
+	#el_popup_error .e-report__textarea {
+		-moz-appearance: none;
+		overflow: auto;
+		outline: none;
+		resize: none
+	}
+	#el_popup_response_event .e-report__textarea_red,
+	#el_popup_error .e-report__textarea_red {
+		border-color: red
+	}
+	#el_popup_edit .from:before {
+		box-sizing: border-box;
+		color: rgba(0,0,0,0.7);
+		content: "с";
+		font-size: 14px;
+		left: 15px;
+		position: absolute;
+		top: 9px
+	}
+	#el_popup_edit .e-report__input_time {
+		margin-left: 6px
+	}
+	#el_popup_edit .to:before {
+		box-sizing: border-box;
+		color: rgba(0,0,0,0.7);
+		content: "до";
+		font-size: 14px;
+		left: 15px;
+		position: absolute;
+		top: 9px
+	}
+	#start_date .e-report__input-wrap > div,
+	#finish_date .e-report__input-wrap > div {
+		position: relative;
+		margin-left: -3px
+	}
+	#start_date .e-report__input-wrap > div > div,
+	#finish_date .e-report__input-wrap > div > div {
+		display: inline-block;
+		vertical-align: top
+	}
+	#start_date,
+	#finish_date {
+		margin: 10px 0
+	}
+	.js-datepicker {
+		width: 125px !important;
+		padding-left: 30px !important
+	}
+	.disabled {
+		display: none !important;
+	}
+	.event_table_choice_str_wrap {
+		margin-top: 4px;
+		max-width: 300px;
+		max-height: 150px;
+		min-width: 75px;
+		word-wrap: break-word
+	}
+	.event_table_choice_str_wrap:focus {
+		margin-top: -3px;
+		outline: none;
+		border: 2px solid #cc0033 !important
+	}
+	.event_table_choice_str.edit {
+		padding: 5px !important
+	}
+	.event_table_choice_str.changed {
+		color: #000;
+  	border-bottom: none;
+	}
+	.e-file__link {
+		cursor: pointer
+	}
+	.e-file__link a {
+		display: block;
+		max-width: 360px;
+		overflow: hidden
+	}
+	.e-link_red.disabled:hover {
+		color: #cc0033
+	}
+	.style_checkbox__input {
+		display: inline;
+	}
+	.style_checkbox__desc {
+		display: inline;
+		position: relative;
+		left: 26px;
+		top: -23px;
+		font-size: 12px;
+	}
+	.style_checkbox.disabled .style_checkbox__input,
+	.style_checkbox.disabled .style_checkbox__desc {
+		cursor: not-allowed !important;
+		opacity: 0.4;
+		-webkit-transition: opacity 0.5s ease-out 0.25s;
+		-moz-transition: opacity 0.5s ease-out 0.25s;
+		-o-transition: opacity 0.5s ease-out 0.25s;
+		transition: opacity 0.5s ease-out 0.25s;
+	}
+	.el_event_edit {
+	  	background-position: 8px 8px;
+			background-repeat: no-repeat;
+			border: 1px solid rgba(204, 0, 51, 0.3);
+			-webkit-border-radius: 3px;
+	        	border-radius: 3px;
+	  	color: #cc0033;
+	  	content: '';
+	  	cursor: pointer;
+	  	float: right;
+	  	height: 36px;
+	  	width: 36px
+	}
+	.el_event_edit:hover {
+		  background-color: #cc0033;
+			color: #fff;
+	}
+	.e-deck-sh tr th {
+		text-align: left
+	}
+	.e-deck-sh tr th, .e-deck-sh tr td {
+		vertical-align: middle
+	}
+	.e-deck-sh tr td {
+		padding: 20px 0 !important
+	}
+	.e-link_red {
+		width: 168px;
+		text-align: center
+	}
+	@media all and (-ms-high-contrast:none) {
+		.style_checkbox__desc {
+			top: -25px
+		}
+		.custom-option-search {
+			display: block !important
+		}
+	}
+	@media all and (max-width: 760px) and (-ms-high-contrast: none) {
+		.style_checkbox__desc {
+			top: -23px !important
+		}
+	}
+	@media all and (max-width: 760px) {
+		.e-deck-sh {
+			display: block !important;
+		}
+		.e-link_red {
+		    width: -webkit-calc(50% - 15px);
+		    width: calc(50% - 15px);
+		    padding: 0;
+		    height: 37px;
+		    line-height: 35px;
+			min-width: 120px;
+			margin-left: 3.8%
+		}
+		.style_checkbox__desc {
+			top: -20px
+		}
+	}
+	@media all and (max-width: 360px) {
+		.ui-datepicker-trigger {
+			margin-left: 5px
+		}
+		#el_popup_edit .el_popup_inner {
+			padding-left: 10px;
+			padding-right: 10px
+		}
+	}
+	@media all and (max-width: 300px) {
+		.e-link_red {
+			margin-left: 0
+		}
+	}
+	@media all and (max-width: 1000px) {
+		.style_checkbox {
+			margin-top: 15px
+		}
+		.el_course_card_btn div:nth-child(2n+1) {
+			min-width: 120px !important
+		}
+	}
+</style>

@@ -1,0 +1,39 @@
+<script type="text/javascript"> 
+    if (document.getElementById("site_title") == undefined)
+        window.location.replace("http://localhost/site/#checkout.html");
+</script>
+
+<h2>Доставка и оплата</h2>
+<h5><strong>ИНФОРМАЦИЯ О ПОКУПАТЕЛЕ</strong></h5>
+<div class="content_half float_l checkout">
+<form id="checkin" method="post" action="javascript:void(0);" onsubmit="ajaxs()">
+    Имя:  
+    <input type="text" name="name" style="width:300px;">
+    <br>
+    <br>
+    Адрес:
+	<input type="text" name="address" style="width:300px;">
+    <br>
+    <br>
+    Адрес электронной почты:
+	<input type="text" name="email" style="width:300px;">
+    <br>
+    <br>
+    Контактный номер:
+    <input type="text" name="number" style="width:300px;">
+    <br>
+    <span style="font-size:10px">Пожалуйста указывайте корректный контактный номер. ДЛЯ ЗАВЕРШЕНИЯ ПОКУПКИ МЫ ДОЛЖНЫ СВЯЗАТЬСЯ С ВАМИ.</span>
+    <input type="text" id="message" name="message" style="display:none">
+</form>
+</div>
+            
+<div class="cleaner h50"></div>
+
+<h5><strong>ДОСТАВКА</strong></h5>
+
+<div class="cleaner h50"></div>
+    
+<h5><strong>ОПЛАТА</strong></h5>
+<h4>Итоговая сумма: <strong><span id="pricemail">240</span> руб.</strong></h4>
+<!--<p><input type="checkbox">Я согласен со всеми <a href="#">правилами</a> этого сайта.</p>-->
+<br><div id="conmail" align="left"><p><input type="submit" name="send" class="sendCart" value="Оформить"></p></div>

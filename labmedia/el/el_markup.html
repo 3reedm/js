@@ -1,0 +1,338 @@
+<ul class="breadcrumbs">
+	<div class="e-container">
+			<li><a href="/view_doc.html?mode=home">Главная</a></li>
+			<!--<li><a href="/view_doc.html?mode=doc&doc_id=6187604994223704517">Отчеты</a></li>-->
+	</div>
+</ul>
+<div class="e-container">
+	<div class="el_course_sticky_wr">
+		<div class="js-card-sticky el_course_card_btn el_course_card_cost">
+			<!-- <div class="el_course_card_btn_red">Участвовать</div> -->
+			<!-- РАСШИРЕННАЯ  -->
+			<div class="el_course_card_btn_blue">К планированию</div>
+			<div class="el_course_card_btn_green">Начать</div>
+			<div class="el_course_card_btn_white disabled">Завершить</div>
+			<div class="el_course_card_btn_grey disabled">Отменить</div>
+
+			<!--  -->
+
+			<a class="e-link_red">Написать отзыв</a>
+		  <div class="style_checkbox"><label><input id="fact_made" class="style_checkbox__input" type="checkbox" value="2"><p class="style_checkbox__desc">Признак факта установлен</p></label></div>
+		</div>
+		<div class="el_course_card_info">
+			<div class="el_sub_text">Мероприятие<div class="el_event_edit" id="event_edit"></div></div>
+			<h1 id="event_name"></h1>
+			<div class="el_card_info_wr mod">
+				<table>
+					<tr>
+						<td><span>Статус</span></td>
+						<td id="event_state"></td>
+					</tr>
+					<tr>
+						<td><span>Тип</span></td>
+						<td id="event_type"></td>
+					</tr>
+					<tr>
+						<td><span>Расположение</span></td>
+						<td id="event_plase1"></td>
+					</tr>
+					<tr>
+						<td><span>Место проведения</span></td>
+						<td id="event_plase2"></td>
+					</tr>
+					<tr>
+						<td><span>Дата и время проведения</span></td>
+						<td id="event_date"></td>
+					</tr>
+					<tr>
+						<td><span>Ваша роль</span></td>
+						<td id="event_role"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="event_desc">
+				<p>
+
+				</p>
+			</div>
+			<h2 class="files">Материалы к мероприятию</h2>
+			<div class="e-file__wrap e-file__wrap_pad clearfix">
+				<div class="e-file e-file_pad col-md-17 col-sm-22 col-xs-14" id="event_file_list">
+					<ul class="e-file__row e-file__row_md">
+						<li class="e-file__item e-file__item_md clearfix">
+							<div class="e-file__left">
+								<div class="e-file__left-txt">pdf</div>
+							</div>
+							<div class="e-file__right">
+								<div class="e-file__inf">
+									<a target="_blank" href="images/grafic.pdf" class="e-file__link">
+										<span>Каталог телевизоров Samsung и аксессуаров 2017</span>
+										<span class="e-file__size">18,4 МБ</span>
+									</a>
+								</div>
+								<div class="e-file__btn-wrap e-file__btn-wrap_pos mod">
+									<a href="images/grafic.pdf" download="" class="e-btn-white-red e-btn-white-red_file">Скачать</a>
+								</div>
+							</div>
+						</li>
+						<li class="e-file__item e-file__item_md clearfix">
+							<div class="e-file__left">
+								<div class="e-file__left-txt">pdf</div>
+							</div>
+							<div class="e-file__right">
+								<div class="e-file__inf">
+									<a target="_blank" href="images/grafic.pdf" class="e-file__link">
+										<span>Каталог смартфонов LG и аксессуаров. Очень длинное название документа в две и более строки</span>
+										<span class="e-file__size">18,4 МБ</span>
+									</a>
+								</div>
+								<div class="e-file__btn-wrap e-file__btn-wrap_pos mod">
+									<a href="images/grafic.pdf" download="" class="e-btn-white-red e-btn-white-red_file">Скачать</a>
+								</div>
+							</div>
+						</li>
+						<li class="e-file__item e-file__item_md clearfix">
+							<div class="e-file__left">
+								<div class="e-file__left-txt">doc</div>
+							</div>
+							<div class="e-file__right">
+								<div class="e-file__inf">
+									<div class="e-file__link">
+										<span>Каталог телевизоров</span>
+										<span class="e-file__size">18,4 МБ</span>
+									</div>
+								</div>
+								<div class="e-file__btn-wrap e-file__btn-wrap_pos mod">
+									<a href="images/banner.png" download="images/banner.png" class="e-btn-white-red e-btn-white-red_file" type="application/octet-stream">Скачать</a>
+									<span class="remove e-icon__cross e-icon__cross_material"></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="e-card__btn-wr e-card__btn-wr_pos">
+				<div class="js_add_file e-btn-white-red e-btn-white-red_plus">
+					<i class="e-icon__plus e-icon__plus_btn"></i><span>Добавить файл</span>
+				</div>
+				<div id="file-input-wrap"><input type="file" name="file" id="addingFile"></div>
+			</div>
+
+			<h2>Участники</h2>
+			<div class="e-tabs">
+				<div class="e-tab-navigation pb js-tabs-group">
+					<div class="js-tabs e-tab__item_tab" rel="first">Ответственные за проведение</div>
+					<div class="js-tabs e-tab__item_tab" rel="second">Ответственные за подготовку</div>
+					<div class="js-tabs e-tab__item_tab" rel="third">Преподаватели</div>
+					<div class="js-tabs e-tab__item_tab" rel="four">Участники</div>
+				</div>
+				<div class="js-tabs-content">
+					<div class="js-tabs-item" id="first">
+						<div class="e-card__btn-wr e-card__btn-wr_pad">
+							<div class="js_change e-btn-white-red">Изменить состав</div>
+						</div>
+						<input type="text" name="search" placeholder="Поиск по ФИО" class="lk_head_search">
+						<div class="lk_head_table_wrapper">
+							<table class="event_collaborator"></table>
+						</div>
+					</div>
+					<div class="js-tabs-item" id="second">
+						<div class="e-card__btn-wr e-card__btn-wr_pad">
+							<div class="js_change e-btn-white-red">Изменить состав</div>
+						</div>
+						<input type="text" name="search" placeholder="Поиск по ФИО" class="lk_head_search">
+						<div class="lk_head_table_wrapper">
+							<table class="event_collaborator"></table>
+						</div>
+					</div>
+					<div class="js-tabs-item" id="third">
+						<div class="e-card__btn-wr e-card__btn-wr_pad">
+							<div class="js_change e-btn-white-red">Изменить состав</div>
+						</div>
+						<input type="text" name="search" placeholder="Поиск по ФИО" class="lk_head_search">
+						<div class="lk_head_table_wrapper">
+							<table class="event_collaborator"></table>
+						</div>
+					</div>
+					<div class="js-tabs-item" id="four">
+						<div class="e-card__btn-wr e-card__btn-wr_pad">
+							<div class="js_change e-btn-white-red">Изменить состав</div>
+						</div>
+						<input type="text" name="search" placeholder="Поиск по ФИО" class="lk_head_search">
+						<div class="lk_head_table_wrapper">
+							<table class="event_collaborator"></table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Окно отзыва -->
+<div class="el_popup" id="el_popup_response_event">
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<div class="el_popup_inner">
+						<div class="close"></div>
+						<div class="title">Отзыв</div>
+						<div class="e-report">
+							<div class="e-report__line">
+								<div class="e-report__item">
+									<div class="e-report__item e-report__item_single">
+										Ваше впечатление о пройденном обучении
+									</div>
+								</div>
+							</div>
+							<div class="e-report__line">
+								<div class="e-report__item">
+									<div class="e-report__item">
+										<div class="e-report__input-wrap">
+											<textarea name="message" id="modal-message"
+											 class="e-report__input e-report__textarea"
+											 maxlength="500" rows="4">
+											</textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="e-report__line e-report__line_single" id="personal-info-status">
+								<div class="e-report__item">error</div>
+							</div>
+							<div class="e-report__line">
+								<div class="e-report__item e-report__item_left"></div>
+								<div class="e-report__item e-report__item_right">
+									<div class="el_popup_btn_line">
+										<div class="el_popup_btn_submit"
+										 id="user-response-event-submit">Отправить
+										</div>
+										<div class="el_popup_btn_cancel"
+										 id="user-response-event-cancel"><span>Отменить</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Предупреждение -->
+<div class="el_popup" id="el_popup_error">
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<div class="el_popup_inner">
+						<div class="close"></div>
+						<div class="title">Ошибка</div>
+						<div class="e-report">
+							<div class="e-report__line e-report__line_single">
+								<div class="e-report__item">error</div>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Окно редактирования мероприятия -->
+<div class="el_popup" id="el_popup_edit">
+    <table>
+		<tbody>
+			<tr>
+				<td>
+					<div class="el_popup_inner">
+					    <div class="close"></div>
+					    <div class="title">Редактирование мероприятия</div>
+					    <div class="e-report">
+						<div class="e-report__line">
+						    <div class="e-report__item e-report__item_left">Название мероприятия</div>
+						    <div class="e-report__item e-report__item_right">
+							<div class="e-report__input-wrap">
+							    <input type="text" name="event_name" id="modal-event-name" class="e-report__input" />
+							</div>
+						    </div>
+						</div>
+						<div class="e-report__line">
+						    <div class="e-report__item e-report__item_left">Тема мероприятия</div>
+						    <div class="e-report__item e-report__item_right">
+							<div class="e-report__input-wrap">
+							    <input type="text" name="event_topic" id="modal-event-topic" class="e-report__input" />
+							</div>
+						    </div>
+						</div>
+						<div class="e-report__line">
+						    <div class="e-report__item e-report__item_left">Место проведения</div>
+						    <div class="e-report__item e-report__item_right">
+							<div class="e-report__input-wrap">
+							    <input type="text" name="event_place" id="modal-event-place" class="e-report__input" />
+							</div>
+						    </div>
+						</div>
+						<div id="start_date" class="e-filter__row e-choice__row">
+							<div class="e-report__item e-report__item_left">Дата и время начала</div>
+							<div class="e-report__item e-report__item_right">
+								<div class="e-report__input-wrap">
+									<div>
+										<div class="from">
+											<input type="" name="start_date" class="js-datepicker e-report__input e-report__input_date" placeholder="20.07.2017">
+										</div>
+										<div>
+											<input type="" name="start_date" class="e-report__input e-report__input_time" placeholder="00:00">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="finish_date" class="e-filter__row e-choice__row">
+							<div class="e-report__item e-report__item_left">Дата и время окончания</div>
+							<div class="e-report__item e-report__item_right">
+								<div class="e-report__input-wrap">
+									<div>
+										<div class="to">
+											<input type="" name="finish_date" class="js-datepicker e-report__input e-report__input_date" placeholder="20.07.2017">
+										</div>
+										<div>
+											<input type="" name="finish_date" class="e-report__input e-report__input_time" placeholder="00:00">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="e-report__line" id="event-info-status" >
+							<div class="e-report__item e-report__item_left"> </div>
+							<div class="e-report__item e-report__item_right">
+							error
+							</div>
+						</div>
+						<div class="e-report__line">
+						    <div class="e-report__item e-report__item_left"></div>
+						    <div class="e-report__item e-report__item_right">
+							<div class="el_popup_btn_line">
+							    <div class="el_popup_btn_submit" id="user-info-submit">Сохранить</div>
+							    <div class="el_popup_btn_cancel" id="user-info-cancel"><span>Отменить</span></div>
+							</div>
+						    </div>
+						</div>
+					    </div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Дополнительные скрипты -->
+<script src="scripts/jqueryui/jquery.ui.core.js"></script>
+<script src="scripts/jqueryui/jquery.ui.datepicker.js"></script>
+<script src="scripts/jqueryui/jquery.ui.widget.js"></script>
+<script src="scripts/jqueryui/jquery.ui.mouse.js"></script>
+<script src="scripts/jqueryui/jquery.ui.sortable.js"></script>

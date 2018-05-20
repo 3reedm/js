@@ -1,0 +1,8 @@
+__xquery_str = "for $e in event_results where $e/person_id=" + curUserID + " return $e";
+
+eventResDoc = OpenDoc(UrlFromDocID(ArrayOptFind(XQuery(__xquery_str), "This.event_id==" + OptInt(eventID)).id));
+eventResTE = eventResDoc.TopElem;
+
+eventResTE.collaborator_comment.Value = UrlDecode(collaborator_comment);
+
+eventResDoc.Save();

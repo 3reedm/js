@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <link href="templatemo_style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css">
+        <link href='css/jquery.jgrowl.css' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="css/latest.css">
+        
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript" src="js/jquery.jgrowl.js"></script> 
+        <script type="text/javascript" src="js/latest.js"></script>
+        
+        <script type="text/javascript" src="js/ddsmoothmenu.js">
+            /***********************************************
+             * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+             * This notice MUST stay intact for legal use
+             * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+             ***********************************************/
+        </script>
+        <script type="text/javascript">
+            ddsmoothmenu.init({
+                mainmenuid: "top_nav", //menu DIV id
+                orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+                classname: 'ddsmoothmenu', //class added to menu's outer DIV
+                                           //customtheme: ["#1c5a80", "#18374a"],
+                contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+            })
+        </script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    
+    <body>
+        <div id="templatemo_body_wrapper">
+            <div id="templatemo_wrapper">
+
+                <div id="templatemo_header">
+                    <div id="site_title">
+                        <h1><a href="main.html"><span id="left"></span><br><span id="right"></span></a></h1>
+                    </div>
+                    <div id="header_right">
+                        <div id="basket">
+                            <a id="checkOut" href="shoppingcart.html"><img src="images/basketshow.png"></img></a>
+                            <table>
+                                <tbody>
+                                    <tr class="hPb">
+                                        <td><span id="totalGoods">0</span> тов.</td>
+                                    </tr>
+                                    <tr class="hPb">
+                                        <td><span id="totalPrice">0</span> руб.</td> 
+                                    </tr>
+                                    <tr class="hPe">
+                                        <td colspan="2">Корзина пуста</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a id="clearBasket" href="#">Очистить</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="cleaner"></div>
+                </div> <!-- END of templatemo_header -->
+    
+                <div id="templatemo_menubar">
+                    <div id="top_nav" class="ddsmoothmenu">
+                        <ul>
+                            <li><a href="main.html" class="selected">Главная</a></li>
+                            <li><a href="products.html">Товары</a></li>
+                            <li><a href="about.html">О нас</a></li>
+                            <li><a href="checkout.html">Доставка и оплата</a></li>
+                            <li><a href="contact.html">Контакты</a></li>
+                        </ul>
+                        <br style="clear: left" />
+                    </div> <!-- end of ddsmoothmenu -->
+                    
+                    <div id="templatemo_search">
+                        <form action="#" method="get">
+                            <input type="text" value="Введите название товара" name="keyword" id="keyword" title="keyword" onfocus="this.value=''" onblur="searchInput = this.value; this.value='Введите название товара'" class="txt_field">
+                            <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Поиск" class="sub_btn">
+                        </form>
+                    </div>
+                </div> <!-- END of templatemo_menubar -->
+    
+                <div id="templatemo_main">
+                    <div id="sidebar" class="float_l">
+                        <div class="sidebar_box"><span class="bottom"></span>
+                            <h3>Категории</h3>   
+                            <div class="content"> 
+                                <ul class="sidebar_list">
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar_box"><span class="bottom"></span>
+                            <h3>Лучшее</h3>   
+                            <div class="content"> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="content" class="float_r"></div> 
+                    
+                    <div class="cleaner"></div>
+                </div> <!-- END of templatemo_main -->
+    
+                <div id="templatemo_footer">
+                    <p><a href="main.html">Главная</a> | <a href="products.html">Товары</a> | <a href="about.html">О нас</a> | <a href="checkout.html">Доставка и оплата</a> | <a href="contact.html">Контакты</a></p>
+
+                    Все права защищены © 2014
+                </div> <!-- END of templatemo_footer -->
+            </div> <!-- END of templatemo_wrapper -->
+        </div> <!-- END of templatemo_body_wrapper -->
+    </body>
+</html>

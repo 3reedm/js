@@ -1,0 +1,147 @@
+alert(users);
+alert(users_role);
+
+eventDoc = OpenDoc(UrlFromDocID(Int(event_id)));
+eventElem = eventDoc.TopElem;
+
+curUsers = [];
+users = tools.read_object(users);
+usersId = ArrayExtract(users, "id");
+usersStr = ArrayMerge(usersId, "This", " ");
+if (users_role == "collaborator")
+{
+	curUsers = ArrayExtract(eventElem.collaborators, "collaborator_id");
+	curUsersStr = ArrayMerge(curUsers, "This", " ");
+	i = 0, j = 0;
+	while (i != usersId.length || j != curUsers.length)
+	{
+		if (i != usersId.length)
+		{
+			tmpId = usersId[i];
+			if (curUsersStr.indexOf(tmpId) == -1)
+			{
+				try
+				{
+					tools.add_person_to_event(Int(tmpId), eventElem.id, null, eventDoc);
+				}
+				catch (e)
+				{
+					alert(e.status);
+				}
+			}
+			i++;
+		}
+
+		if (j != curUsers.length)
+		{
+			tmpId = curUsers[j];
+			if (usersStr.indexOf(tmpId) == -1)
+			{
+				try
+				{
+					tools.del_person_from_event(Int(tmpId), eventElem.id, eventDoc, true);
+				}
+				catch (e)
+				{
+					alert(e.status);
+				}
+			}
+			j++;
+		}
+	}
+}
+else
+{
+	var curGroup;
+	if (users_role == "tutor") {
+		//idStr = "collaborator_id";
+		//curUsers = ArrayExtract(eventElem.tutors, idStr);
+ 		curGroup = eventElem.tutors;
+	}
+	else if (users_role == "preparation") {
+		//idStr = "person_id";
+		//curUsers = ArrayExtract(eventElem.even_preparations, idStr);
+		curGroup = eventElem.even_preparations;
+	}
+	else {
+		//idStr = "lector_id";
+		//curUsers = ArrayExtract(eventElem.lectors, idStr);
+		curGroup = eventElem.lectors;
+	}
+
+	while (ArrayCount(curGroup))
+		curGroup[ArrayCount(curGroup)-1].Delete();
+
+	try {
+		for (i = 0; i < usersId.length; ++i)
+		{
+			tmpId = usersId[i];
+			newChild = curGroup.AddChild();
+
+			if (users_role == "tutor") {
+				newChild.collaborator_id = users[i].id;
+				newChild.person_fullname = users[i].fullname;
+			}
+			else if (users_role == "preparation") {
+				newChild.person_id = users[i].id;
+				newChild.person_fullname = users[i].fullname;
+			}
+			else {
+				newChild.lector_id = users[i].id;
+			}
+		}
+	}
+	catch(e) {
+		alert(e.message);
+	}
+
+	/*usersStr = ArrayMerge(usersId, "This", " ");
+	curUsersStr = ArrayMerge(curUsers, "This", " ");
+	i = 0, j = 0, k = 0;
+	while (i != usersId.length || j != curUsers.length)
+	{
+		if (i != usersId.length)
+		{
+			tmpId = usersId[i];
+			if (curUsersStr.indexOf(tmpId) == -1)
+			{
+				newChild = curGroup.AddChild();
+
+				if (users_role == "tutor") {
+					newChild.collaborator_id = users[i].id;
+					newChild.person_fullname = users[i].fullname;
+				}
+				else if (users_role == "preparation") {
+					newChild.person_id = users[i].id;
+					newChild.person_fullname = users[i].fullname;
+				}
+				else {
+					newChild.lector_id = users[i].id;
+				}
+			}
+			i++;
+		}
+
+		if (j != curUsers.length) {
+			tmpId = curUsers[j];
+
+			if (usersStr.indexOf(tmpId) == -1)
+			{
+				tmpStr = "This." + idStr + "==" + tmpId;
+
+				try
+				{
+					ArrayOptFindByKey(curGroup,tmpId,idStr).Delete();
+					eventElem.event_settings.send_type = ''
+				}
+				catch (e)
+				{
+					alert(e.message);
+				}
+			}
+
+			j++;
+		}
+	}*/
+}
+eventDoc.Save();

@@ -1,0 +1,97 @@
+<%
+try
+{
+	var action = Request.Query.action;
+
+	if (action == "file_update")
+	{
+		var file_action = Request.Form.GetOptProperty("file_action", "");
+
+		var add_file = file_action == "add_file";
+		var remove_file = file_action == "remove_file";
+
+		var result = {
+			success: false,
+			doc_id: 0,
+			msg: ""
+		};
+
+		if (add_file)
+		{
+			try
+			{
+				reqFile = {
+					type: Request.Form.GetOptProperty("file_type", ""),
+					name: Request.Form.GetOptProperty("file_name", ""),
+					size: Request.Form.GetOptProperty("file_size", ""),
+					file: Request.Form.GetOptProperty("file", ""),
+					event_id: Request.Form.GetOptProperty("event_id", "")
+				}
+
+				docFile = OpenNewDoc("x-local://wtv/wtv_resource.xmd");
+				docFile.BindToDb();
+
+				teFile = docFile.TopElem;
+				teFile.person_id = curUserID;
+				teFile.person_fullname = curUser.fullname;
+				teFile.name = reqFile.name;
+				teFile.file_name = reqFile.name;
+				teFile.size = reqFile.size;
+				teFile.type = reqFile.type;
+				teFile.allow_download = true;
+				teFile.put_str(reqFile.file, reqFile.name);
+				docFile.Save();
+
+				eventDoc = OpenDoc(UrlFromDocID(Int(reqFile.event_id)));
+				eventElem = eventDoc.TopElem;
+
+				eventElem.files.ObtainChildByKey(docFile.DocID);
+				eventDoc.Save();
+
+				result.doc_id = docFile.DocID;
+			}
+			catch ( err )
+			{
+				alert('file_add.bs error: '+ err );
+				ERROR = 1;
+				MESSAGE = tools_web.get_web_const( 'c_error', curLngWeb );
+			}
+		}
+
+		if (remove_file)
+		{
+			try {
+				idFile = Request.Form.GetOptProperty("file_id", "");
+				idEvent = Request.Form.GetOptProperty("event_id", "");
+
+				if (idFile != 0) {
+					eventDoc = OpenDoc(UrlFromDocID(Int(idEvent)));
+					eventElem = eventDoc.TopElem;
+					eventElem.files.DeleteChildren("This.file_id==" + idFile);
+
+					xqueryStr = "for $e in resources where $e/id=" + idFile + " return $e";
+					delIdDoc = ArrayOptFirstElem(XQuery(xqueryStr)).id;
+					DeleteDoc(UrlFromDocID(delIdDoc));
+
+					eventDoc.Save();
+				}
+			}
+			catch(e) {
+				alert('remove error: '+ e);
+				ERROR = 1;
+				MESSAGE = tools_web.get_web_const( 'c_error', curLngWeb );
+			}
+		}
+
+		result.success = true;
+
+		Response.Write(tools.object_to_text(result ,"json"));
+	}
+}
+catch (ex)
+{
+	Response.Write("upload_file " + ex);
+}
+
+
+%>
